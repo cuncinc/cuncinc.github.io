@@ -4,7 +4,7 @@ status: public
 tag: '技术 Java'
 title: 【Java-基础】字符串
 ---
-
+![](https://github.com/cuncinc/cuncinc.github.io/blob/master/blog/_posts/_image/2019-04-25-1.jpeg)
 ### Sting类
 Java中的字符串不是一个数据类型，而是一个预定义类。
 ```Java
