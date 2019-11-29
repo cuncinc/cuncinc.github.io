@@ -15,11 +15,12 @@
 # in the templates via {{ site.myvariable }}.
 title: Chunson
 email: cuncinc@foxmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-This is Chunson's blog.
+description: >-  This is Chunson's blog. 
+# this means to ignore newlines until "baseurl:"
+ 
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "http://chunson.xyz" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  cuncinc
+github_username: cuncinc
 
 # Build settings
 markdown: md
