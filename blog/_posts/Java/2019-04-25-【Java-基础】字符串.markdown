@@ -1,0 +1,83 @@
+---
+date: 2019-04-25 16:22
+status: public
+tag: '技术 Java'
+title: 【Java-基础】字符串
+---
+![](https://github.com/cuncinc/cuncinc.github.io/blob/master/blog/_posts/_image/2019-04-25-1.jpeg)
+### Sting类
+Java中的字符串不是一个数据类型，而是一个预定义类。
+```Java
+String name = "ZhangSan";
+```
+对name进行操作，相当于对一个对象进行操作，应使用成员运算符`.`调用String类的方法：
+```Java
+String Xing = name.substring(0, 5);
+```
+此时，Xing为“Zhang”。
+
+### 拼接
+Java中可用“+”对字符串进行拼接：
+```Java
+String name2 = Xing + "Dapao";
+```
+
+### 与C/C++的区别
+Java中的String，不是字符数组`char Xing[] = "Zhang"`，而是类似C中的char *指针`char *Xing = "Zhang"`。当在Java中执行
+```Java
+String Xing = "Zhang";
+Xing = "Wang";
+```
+时，先在栈中分配了Xing这个变量的地址，再在堆中分配"Zhang"的地址，并把"Zhang"的地址存在Xing变量中。又在堆中分配"Wang"的地址，把Xing变量的内容变成"Wang"的地址。若没有指针指向"Zhang"，Java讲自动进行垃圾回收。
+
+> P.S. 在C中，
+> ```C
+> char * x = "zhang";
+> x = "wang";
+> ```
+> 是如何处理的？
+> 推测可能的方法有：
+> 1. 把zhang所在的空间存入"wang"，x的值不变
+> 2. 新分配一块内存存储"wang"，x的值改变，指向了"wang"。那么，新的疑问："song"的空间会如何处理？会不会在程序运行时自动释放？还是说需要用free()手动释放？
+
+### 判断字符串相等
+```Java
+boolean ifequal;
+ifequal = name.equals(name2);
+ifequal = name.equals("ZhangDapao");
+ifequal = "Zhangsan".equals(name2);
+```
+以上三种方式都是可行的。
+但不能用`==`进行判断，因为`==`判断的是指针，即两个字符串是否在同一个位置。在同一个位置，字符串不一定相等；不在同一个位置，也不一定不相等。如
+```Java
+if (name == name.substring(0,5))    //判断的结果是false
+```
+### 空串和Null串
+空串""长度为0，有内容(即空)，用`name.length()==0`或`name.equals("")`判断name是否为空串。
+Null串与空串不同，表示没有对象与变量关联(注意String是一个类)，用`if(name==null)`判断。
+要检查一个字符串既不为null也不为空：
+```Java
+if (name!=null && name.length()!=0)
+```
+先判断是否为null再判断是否为空，不然对null串进行操作会报错。
+
+> P.S.
+> 那么空串是否在堆中分配了空间？分配了多少？变量是否存有指针？
+
+### 构建字符串
+用拼接，即`"AB" + "CD"`的方式构建字符串效率比较低，每次拼接都会构建新的String对象，耗时耗空间。
+应该使用StringBuilder类来构造：
+```Java
+StringBuilder builder = new StringBuilder();
+```
+每次添加内容，用append方法：
+```Java
+builder.append("Zhang");
+builder.append('S');    //构造函数，参数不同，
+```
+用toString方法构造字符串：
+```Java
+String name = builder.toString();
+```
+### 最后
+想要深入理解Java字符串，要先了解一下Java类和C/C++。虽然Java里没有指针，但理解了指针，肯定能更好地理解Java。大神们都说把C学好再去学其他语言就是小菜一碟，好好学C吧。
