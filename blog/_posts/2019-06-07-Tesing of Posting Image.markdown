@@ -14,4 +14,4 @@ title: 'Testing of Posting Image'
 
 
 ![](~/2.jpg)
-这张图是直接用Farbox的服务器。
+这张图是直接用GithHub的服务器。
