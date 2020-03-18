@@ -1,5 +1,7 @@
-# cuncinc.github.io
-
 ## 给自己的提醒
-
-**注意，要在blog/_post/目录下写东西，要用YYYY-MM-DD-name.markdown的格式命名，不然不显示！**
+***
+1. 在blog/_post/目录下写东西，可以嵌套在子文件夹下。
+2. 用YYYY-MM-DD-name.md的格式命名，拓展名也可以用.markdown，不然不显示！
+3. YYYY-MM-DD的日期格式不能有错误，如MM不能大于12，否则build失败。
+4. 图片用图床。暂时未找到更好的办法。
+***
