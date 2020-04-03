@@ -1,0 +1,35 @@
+---
+time: 2020-03-21
+tag: mysql
+---
+
+导出到文件
+
+1. 导出整个数据库
+
+   ```shell
+   #在bash环境下
+   mysqldump -u 用户名 -p 数据库名 > 导出的文件名
+   Enter password:		<--数据库密码
+   ```
+
+2. 导出表 
+
+   ```shell
+   mysqldump -u 用户名 -p 数据库名 表1名 表2名 > 导出的文件名
+   ```
+
+3. 到入表
+
+   ```shell
+   #在bash下
+   mysql -u 用户名 -p 数据库名 < 待导入的文件名
+   ```
+
+在把高版本Mysql导出的文件导入到低版本Mysql时，遇到了了一个问题
+
+```
+ERROR 1273 (HY000) at line 25: Unknown collation: 'utf8mb4_0900_ai_ci'
+```
+
+我的解决方法手动把导出的文件里的所有`utf8mb4_0900_ai_ci`换成`utf8mb4_general_ci`后再执行导入，完美解决问题。
