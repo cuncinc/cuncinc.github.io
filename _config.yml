@@ -1,5 +1,3 @@
-# Welcome to Jekyll!
-#
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing this file very often, consider using Jekyll's data files
@@ -13,14 +11,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Chunson
-email: cuncinc@foxmail.com
-description:   This is Chunson's blog. 
+title: "Chunson"
+email: "cuncinc@foxmail.com"
+description: "别放弃对技术的追求"
+
 # this means to ignore newlines until "baseurl:"
- 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://chunson.xyz" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: cuncinc
+github_username: "cuncinc"
 
 # Build settings
 markdown: md
