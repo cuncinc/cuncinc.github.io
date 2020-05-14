@@ -212,6 +212,7 @@ GRANT 权限 ON 数据库名.数据表名 TO '用户名'@'可操作主机'
 
 ```mysql
 grant all on user.* to 'root'@'%';
+flush privileges;	-- 刷新权限
 ```
 
 ### Navicat连接问题
