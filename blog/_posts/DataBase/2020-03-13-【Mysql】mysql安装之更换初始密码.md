@@ -175,7 +175,7 @@ mysql> select user, host from user;
 刷新权限
 
 ```mysql
-mysql> flush privileges;
+    mysql> flush privileges;
 ```
 
 重启
