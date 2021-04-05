@@ -1,0 +1,141 @@
+### 前言
+
+又到了开学季，看到学弟学妹们努力学习 C 语言的样子，我就想到了当年的自己。然鹅，大家使用的 C 语言 IDE 都不怎么好，VC++6.0 是上古n年前的老古董了；Dev-C++ 经常抽风，而且也没有自动补全(不过初学还是要多多手打，少用自动补全)；VS 则太大了，不仅下载花时间，使用的时候创建工程也花时间，日后自己探索吧。
+
+我给大家推荐一款现代化的代码编辑器——VSCode。这是一款非常好用的软件，但是想要在这上面运行C程序，略微有点麻烦，需要进行配置。
+
+### VSCode + MinGW-w64
+
+VSCode 全称 Visual Stuio Code，是微软家的一个文本编辑器。VSCode 有很多插件，上到 html +css+js，下到汇编以及 VHDL，都有插件支持， 生态真的非常好。而且平时做个简单的文本替换，也可以用 VSCode，学会正则之后，更加美滋滋。
+
+MinGW-w64，简单来说，就是win下的64位 gcc，是一个 C/C++ 编译器。
+
+### 一. 下载软件
+
+1. 下载 MinGW。我折腾了好久才把这东西给下下来，之前下了好几次都不对，可以直接下载[免安装版本](https://nchc.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/sjlj/x86_64-8.1.0-release-win32-sjlj-rt_v6-rev0.7z)，也可以使用[下载器](https://nchc.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe)下载(似乎需要梯子)。
+
+2. 下载 VSCode。直接到[官网](https://code.visualstudio.com/Download)下载即可。
+
+### 二. 安装MinGW
+
+1. 把下载下来的免安装版压缩包解压到一个目录下，一般是放在 `C:\Program Files\mingw64` 里，要记住自己安装在了哪里，后面还要用到这个路径。
+
+2. 添加环境变量。添加环境变量是为了让计算机在任何地方都能使用此目录下的程序。
+
+   (1). 对 "此电脑" 右键，选择 "属性"
+
+   ![此电脑.png](https://i.loli.net/2020/10/21/8gdUMZuzvJlGLwy.png)
+
+   (2). 找到 "高级系统设置"，点击之
+
+   ![高级系统设置.png](https://i.loli.net/2020/10/21/9VUgdQHcGMlRZju.png)
+
+   (3). 点击"环境变量"
+
+   ![环境变量.png](https://i.loli.net/2020/10/21/C5VyQtlkBILYWsv.png)
+
+   (4). 在下面的 "系统变量" 里找到 "Path" 这个变量，双击打开
+
+   ![系统变量.png](https://i.loli.net/2020/10/21/UPfIW3MGgxOqsYS.png)
+
+   (5). 点击"新建"，把 `安装目录/bin` 复制到编辑框，点击"确定"退出即可。
+
+   ![新建.png](https://i.loli.net/2020/10/21/7fOplvtjNqEGmxh.png)
+
+3. 检查是否安装成功。按 `win + R` 键打开"运行"，输入 `cmd` 并回车。在打开的界面里输入 `gcc` ，若输出如下信息则表示安装成功：
+
+   ```
+   gcc: fatal error: no input files
+   compilation terminated.
+   ```
+
+   ![成功.png](https://i.loli.net/2020/10/21/pcLmKRCPx9zl2TO.png)
+
+   若输出如下信息表示安装失败，应检查环境变量是否出错。
+
+   ```
+   'gcc' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+   ```
+
+
+### 三. 安装并配置 VSCode
+
+1. 打开 VSCode 的安装包按提示安装好后，运行之。
+
+2. 设置中文。点击如下图步骤1的插件拓展按钮，在搜索框输入 "Chinese" , 找到下方的 "Chinese (Simplified) Language 中文(简体)"，点击绿色的 "Install"(安装)按钮。或直接[点此安装](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)。
+
+   ![设置中文.png](https://i.loli.net/2020/10/21/SZaMsfqnD8P2WUk.png)
+
+3. 安装 "C/C++" 拓展插件，方法同上，搜索 "C/C++"。或直接[点此安装](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)。
+
+   ![image.png](https://i.loli.net/2020/10/21/2C7bYvJwNu8GtSV.png)
+
+
+### 四. 配置C运行环境
+
+#### 一些概念
+
+   1. VSCode 只是一个文本编辑器，和记事本是同一个性质的软件，只是比较高级。文本编辑器不能直接运行程序，必须先为其配置好运行环境。**注意不支持中文路径和中文文件名，因此文件都应用英文命名！**
+
+   2. VSCode 的调试环境存储在工作目录下。也就是说，要配置运行环境，必须先打开一个工作目录；配置好运行环境后，就得一直使用这个工作目录，若使用其他工作目录，运行环境要重新配置。
+
+#### 开始配置
+
+   1. 打开一个工作目录。
+
+      工作目录中存放的是平时使用的代码，应在合适的路径下新建一个文件夹，方便日后查找和管理。比如可在 "文档" 目录下新建 "code" 文件夹，以 "code" 为工作目录。
+
+      点击 "资源管理器" 图标，点击 "打开文件夹" 按钮，选择刚才新建的文件夹，点击 "选择文件夹"。
+
+      ![打开工作目录.png](https://i.loli.net/2020/10/21/RCNtlKk13eTXovi.png)
+
+   2. 打开文件夹后，点击 "新建文件" 按钮，输入文件名 `test.c`，复制以下代码到右边的编辑界面，按 `Ctrl + S` 保存。
+
+      ![image.png](https://i.loli.net/2020/10/21/1TRwJ7gqXKVChGr.png)
+
+   ```C
+   #include <stdio.h>
+   #include <stdlib.h>
+
+   int main(void)
+   {
+       printf("Hello, world!\n");
+   	//在命令行界面调用pause命令暂停，否则输出会一闪而过
+       system("pause");
+       return 0;
+   }
+   ```
+
+   3. 开始调试。保证右边的编辑界面定位到 test.c，点击右边的调试图标，点击 "运行和调试" 按钮。或直接按`F5` 。
+
+      ![开始调试.png](https://i.loli.net/2020/10/21/a9h8nTcl2OWBZdP.png)
+
+   4. 在弹出的 "选择环境" 界面中选择第一个 "C++ (GDB/LLDB)"，在 "选择配置" 中选择 "gcc.exe - 生成和调试活动文件"。
+
+      ![选择环境.png](https://i.loli.net/2020/10/21/taA2yhESLRYxKqQ.png)
+
+      ![选择配置.png](https://i.loli.net/2020/10/21/3KW15i7gVMAX6x2.png)
+
+   5. 在生成的 `launch.json` 里，找到 `externalConsole` 这一项，把后面的 `false` 改成 **`true`**，把信息输出到外面。
+
+   6. 在右边的编辑界面选中 test.c 文件，在左边调试界面里点击绿色三角形进行调试，或直接按 `F5` 开始调试。弹出输出界面，即成功。
+
+      ![运行.png](https://i.loli.net/2020/10/21/wFQ9RyNTIM7uCce.png)
+
+      注意：系统会在当前工作目录下生成一个 `.vscode` 文件夹，里面存放着调试配置信息，**一定不能删除**。想在其他目录下进行调试，直接把这个文件发复制到对应目录即可。**再次提醒，不支持中文路径和中文文件名，文件都要用英文命名！**
+
+### VSCode 使用技巧
+
+1. **使用 Ctrl+鼠标滚轮 缩放字体**
+
+   按 `win + ,` 打开设置，搜索 `ctrl`，找到 **`editor.mouseWheelZoom`** 这个复选框，勾选之。即可在编辑界面按住 Ctrl 键用鼠标滚轮缩放字体。
+
+   ![image.png](https://i.loli.net/2020/10/21/bJK2TjGDcwy7BWM.png)
+
+2. **自动保存**
+
+   按 `win + ,` 打开设置，可看到第一个设置就是保存时间，更改其选项为 **`afterDelay`**，即可打开自动保存。
+
+3. **格式化代码**
+
+   代码格式化即对代码进行排版，使其缩进更便于阅读。在编辑界面，同时按住 **`Shift + Alt + F`**，即可对代码进行格式化。**很多初学者的代码排版都极不规范，大家要有使用良好缩进的意识。**

@@ -48,7 +48,12 @@ mysql> SHOW VARIABLES LIKE 'validate_password%';
 修改密码策略
 
 ```mysql
-mysql> set global validate_password.policy=0	#密码强度检查等级设置为0(low)
+#8.0
+mysql> set global validate_password.policy=0;	#密码强度检查等级设置为0(low)
+
+#5.7
+mysql> set global validate_password_policy = 0;
+
 Query OK, 0 rows affected (0.00 sec)	#有此提示才表示执行成功
 ```
 
@@ -59,7 +64,12 @@ Query OK, 0 rows affected (0.00 sec)	#有此提示才表示执行成功
 | 2              | STRONG         | 符合长度；有数字，字母，符号；验证密码强度的字典文件路径 |
 
 ```mysql
+#8.0
 mysql> set global validate_password.length=4;	#密码最小长度设置为4，不能小于4
+
+#5.7
+mysql> set global validate_password_length=4;
+
 Query OK, 0 rows affected (0.00 sec)
 ```
 
