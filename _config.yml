@@ -22,7 +22,7 @@ github_username: "cuncinc"
 
 # Build settings
 markdown: md
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
