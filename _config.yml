@@ -102,7 +102,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: false # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: valine # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
   disqus:
@@ -121,8 +121,8 @@ comments:
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
   valine:
-    app_id      : # LeanCloud App id
-    app_key     : # LeanCloud App key
+    app_id      : mhm7eiE6Ywjq5FCQFefgPafl-MdYXbMMI # LeanCloud App id
+    app_key     : VszSpL9eWxb9W4YQwXBgQinI # LeanCloud App key
     placeholder : # Prompt information
     visitor     : # false (default)
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
@@ -135,9 +135,9 @@ pageview:
 
   ## Leancloud
   leancloud:
-    app_id    : "mhm7eiE6Ywjq5FCQFefgPafl-MdYXbMMI" # LeanCloud App id
-    app_key   : "VszSpL9eWxb9W4YQwXBgQinI" # LeanCloud App key
-    app_class : "Count" # LeanCloud App class
+    app_id    : mhm7eiE6Ywjq5FCQFefgPafl-MdYXbMMI # LeanCloud App id
+    app_key   : VszSpL9eWxb9W4YQwXBgQinI # LeanCloud App key
+    app_class : Count # LeanCloud App class
 
 
 ## => Search
