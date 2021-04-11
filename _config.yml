@@ -80,7 +80,7 @@ chart:  # false (default), true
 
 ## => Paginate
 ##############################
-paginate: 10
+paginate: 8
 paginate_path: /page:num # don't change this unless for special need
 
 
@@ -131,7 +131,7 @@ comments:
 ## => Pageview
 ##############################
 pageview:
-  provider: true # false (default), "leancloud", "custom"
+  provider: "leancloud" # false (default), "leancloud", "custom"
 
   ## Leancloud
   leancloud:
@@ -187,7 +187,7 @@ exclude:
 
 defaults:
   - scope:
-      path: ""
+      path: "/_post"
       type: posts
     values:
       layout: article
