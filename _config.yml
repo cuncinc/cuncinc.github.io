@@ -21,7 +21,7 @@ author:
   type      : person # "person" (default), "organization"
   name      : chunson
   url       :
-  avatar    : https://i.loli.net/2019/06/07/5cfa08739110842627.jpg # path or url of avatar image (square)
+  avatar    : ./picture/avatar.jpg # path or url of avatar image (square)
   bio       : 追求卓越
   email     :
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
@@ -58,7 +58,7 @@ paths:
 excerpt_separator: <!--more-->
 
 ## license
-license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+license: # CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
 
 ## TOC
 toc:
