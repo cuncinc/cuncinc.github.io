@@ -5,8 +5,6 @@ status: public
 title: gitbook导出pdf
 ---
 
-# gitbook导出pdf
-
 整理Chrome里的书签时，发现了一本[xv6中文文档](https://th0ar.gitbooks.io/xv6-chinese/content/)gitbook，刚好最近想研究一下这方面的内容，于是就看了一下。但是我不太习惯使用浏览器在网络环境上看书，打算下载下来，却没有发现pdf版。Google之，发现可以把GitHub项目下载下来，[使用gitbook生成pdf](https://github.com/GitbookIO/gitbook/blob/master/docs/ebook.md)。
 
 1. 使用git把项目下载下来

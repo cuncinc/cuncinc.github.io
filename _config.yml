@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "Language & timezone"
 ## => Language and Timezone
 ##############################
 lang: zh-CN # the language of your site, default as "en"
-timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+timezone: Asia/Shanghai # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 
 ## => Author and Social
@@ -72,10 +72,10 @@ mathjax: true # false (default), true
 mathjax_autoNumber: true # false (default), true
 
 ## Mermaid
-mermaid: true # false (default), true
+mermaid:  # false (default), true
 
 ## Chart
-chart: true # false (default), true
+chart:  # false (default), true
 
 
 ## => Paginate
@@ -163,7 +163,7 @@ analytics:
 
 ## => Build
 ##############################
-markdown    : kramdown
+markdown    : md
 highlighter : rouge
 permalink   : date
 
