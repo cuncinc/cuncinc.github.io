@@ -1,9 +1,9 @@
-```
+---
 date: 2020-04-02
 tag: git
 status: public
 title: Commit message 书写规范
-```
+---
 
 ### commit message 格式
 
@@ -58,4 +58,3 @@ subject 是 commit 目的的简短描述。
 > [Commit message 和 Change log 编写指南](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 >
 > [优雅的提交你的 Git Commit Message](https://juejin.im/post/5afc5242f265da0b7f44bee4)
-

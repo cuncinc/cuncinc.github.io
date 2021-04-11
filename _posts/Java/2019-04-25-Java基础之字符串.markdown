@@ -1,8 +1,8 @@
 ---
 date: 2019-04-25 16:22
 status: public
-tag: '技术 Java'
-title: 【Java】字符串
+tag: Java
+title: Java基础之字符串
 ---
 ### Sting类
 Java中的字符串不是一个数据类型，而是一个预定义类。

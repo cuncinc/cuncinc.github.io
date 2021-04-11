@@ -1,6 +1,7 @@
 ---
 date: 2019-06-07 15:04
 status: public
+tag: test
 title: 'Testing of Posting Image'
 ---
 
