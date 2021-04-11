@@ -1,6 +1,7 @@
 ---
 date: 2020-04-02
 tag: git
+key: git.20200402
 status: public
 title: Commit message 书写规范
 ---
