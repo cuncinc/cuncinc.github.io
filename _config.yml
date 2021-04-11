@@ -47,7 +47,7 @@ repository_tree: master
 ##############################
 paths:
   root    : # title link url, "/" (default)
-  home    : /_posts # home layout url, "/" (default)
+  home    : # home layout url, "/" (default)
   archive : # "/archive.html" (default)
   rss     : # "/feed.xml" (default)
 
@@ -135,9 +135,9 @@ pageview:
 
   ## Leancloud
   leancloud:
-    app_id    : mhm7eiE6Ywjq5FCQFefgPafl-MdYXbMMI # LeanCloud App id
-    app_key   : VszSpL9eWxb9W4YQwXBgQinI # LeanCloud App key
-    app_class : Count # LeanCloud App class
+    app_id    : "mhm7eiE6Ywjq5FCQFefgPafl-MdYXbMMI" # LeanCloud App id
+    app_key   : "VszSpL9eWxb9W4YQwXBgQinI" # LeanCloud App key
+    app_class : "Count" # LeanCloud App class
 
 
 ## => Search
