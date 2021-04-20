@@ -36,10 +36,6 @@ xv6 使用 `ANSI C` 重写，保留了 v6 的基本模块，且支持多核 x86 
 
 打开 Source Insight，在 Project 菜单下新建一个项目（注意不要在 File 菜单下选择）
 
-
-
-
-
 > 参考
 >
 > [xv6的历史](https://pdos.csail.mit.edu/6.828/2017/xv6.html)
