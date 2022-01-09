@@ -7,23 +7,23 @@ title: Java基础之字符串
 ---
 ### Sting类
 Java中的字符串不是一个数据类型，而是一个预定义类。
-```Java
+```java
 String name = "ZhangSan";
 ```
 对name进行操作，相当于对一个对象进行操作，应使用成员运算符`.`调用String类的方法`substring()`
-```Java
+```java
 String lastName = name.substring(0, 5);
 //此时，lastName为“Zhang”
 ```
 ### 拼接
 Java中可用 `+` 对字符串进行拼接：
-```Java
+```java
 String name2 = lastName + "Dapao";
 ```
 
 ### 与C/C++的区别
 Java中的String，不是字符数组`char name[] = "ZhangSan"`，而是类似C中的char *指针`char *name = "ZhangSan"`。
-```Java
+```java
 String name = "ZhangSan";
 name = "WangWu";
 ```
@@ -41,7 +41,7 @@ name = "WangWu";
 > 2. 新分配一块内存存储"wang"，x的值改变，指向了"wang"。那么，新的疑问："zhang"的空间会如何处理？会不会在程序运行时自动释放？还是说需要用free()手动释放？
 
 ### 判断字符串相等
-```Java
+```java
 boolean isEqual;
 isEqual = name.equals(name2);
 isEqual = name.equals("ZhangDapao");
@@ -50,25 +50,25 @@ isEqual = "Zhangsan".equals(name2);
 以上三种方式都是可行的。
 但不能用`==`进行判断，因为`==`判断的是指针，即两个字符串是否在同一个位置。在同一个位置，字符串不一定相等；不在同一个位置，也不一定不相等。如
 
-```Java
+```java
 if (name == name.substring(0,5))    //判断的结果是false
 ```
 ### 空串和Null串
 空串`""`长度为0，有内容(即空)，有很多方法可以判断一个字符串是否**为空**
 
-1. 
+1.
 
-```javascript
+```java
 if (string.length() == 0)
 ```
 
-2. 
+2.
 
 ```java
 if (string.equals(""))
 ```
 
-3. 
+3.
 
 ```java
 if (string.isEmpty())
@@ -82,7 +82,7 @@ if (null == string)
 
 要检查一个字符串既不为null也不为空：
 
-```Java
+```java
 if (name!=null && name.length()!=0)
 ```
 如果对一个null串使用`.isEmpty()`或`.isBlank()`方法，则会抛出一个`NullPointerException`。因此，在判断一个字符串是否为空之前，一定要先判断是否为null。或者使用StringUtils工具类，判断**不为null也不是空**：
@@ -99,7 +99,7 @@ if (StringUtils.isNotBlank(name))
 用拼接，即`"AB" + "CD"`的方式构建字符串效率比较低，每次拼接都会构建新的String对象，耗时耗空间。
 应该使用StringBuilder类来构造：
 
-```Java
+```java
 StringBuilder builder = new StringBuilder();
 ```
 每次添加内容，用append方法：
@@ -110,7 +110,7 @@ builder.append('S');    //方法参数不同
 buider.append("Zhang").append('S');
 ```
 用`toString()`方法构造字符串：
-```Java
+```java
 String name = builder.toString();
 ```
 ### 最后
