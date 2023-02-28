@@ -22,7 +22,7 @@ author:
   name      : chunson
   url       :
   avatar    : ./picture/avatar.jpg # path or url of avatar image (square)
-  bio       : 追求卓越
+  bio       :
   email     :
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
@@ -102,7 +102,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: valine # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
   disqus:
@@ -121,23 +121,23 @@ comments:
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
   valine:
-    app_id      : "qfXrqc2jrlLwjjmjbFyuIXqr-MdYXbMMI" # LeanCloud App id
-    app_key     : "a3DE8N7RyfYWq9sQkIUOuSSf" # LeanCloud App key
+    app_id      : # LeanCloud App id
+    app_key     : # LeanCloud App key
     placeholder : # Prompt information
-    visitor     : true # false (default)
+    visitor     : # false (default)
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
 
 
 ## => Pageview
 ##############################
 pageview:
-  provider:  leancloud # false (default), "leancloud", "custom"
+  provider:  # false (default), "leancloud", "custom"
 
   ## Leancloud
   leancloud:
-    app_id    : # qfXrqc2jrlLwjjmjbFyuIXqr-MdYXbMMI # LeanCloud App id
-    app_key   : # a3DE8N7RyfYWq9sQkIUOuSSf # LeanCloud App key
-    app_class : # test # LeanCloud App class
+    app_id    : # LeanCloud App id
+    app_key   : # LeanCloud App key
+    app_class : # LeanCloud App class
 
 
 ## => Search
